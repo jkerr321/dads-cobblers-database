@@ -74,7 +74,8 @@
     </div>
     <div class="info">
         <div class="modal js-modal border">
-            <div class="modal-content js-modal-content">
+            <div class="modal-content js-modal-content-info">
+                <button class="modal-edit-data">Edit</button>
                 <div class="modal-latin-name js-modal-latin-name"></div>
                 <div class="modal-common-name js-modal-common-name">Click on a spot to find out more :)</div>
                 <div class="modal-perennial-annual js-modal-perennial-annual"></div>
@@ -82,6 +83,24 @@
                 <div class="modal-image js-modal-image"></div>
                 <div class="modal-link js-modal-link"></div>
             </div>
+            <form class="modal-content js-modal-content-form" method="POST" action="/{{seasonPath}}">
+                <label for="form-latin-name">Latin Name</label>
+                <input type="text" name="latinName" placeholder="" id="form-latin-name" class="js-form-latin-name"></input>
+                <label for="form-common-name">Common Name</label>
+                <input type="text" name="commonName" placeholder="" id="form-common-name" class="js-form-common-name"></input>
+                <label for="form-perennial-annual">Perennial / Annual</label>
+                <input type="text" placeholder="" name="perennialAnnual" id="form-perennial-annual" class="js-form-perennial-annual"></input>
+                <label for="form-colour">Colour</label>
+                <input type="text" name="colour" placeholder="" id="form-colour" class="js-form-colour"></input>
+                <label for="form-planted-date">Planted Date</label>
+                <input type="text" name="plantedDate" placeholder="" id="form-planted-date" class="js-form-planted-date"></input>
+                <label for="form-image">Image (URL)</label>
+                <input type="text" name="image" placeholder="" id="form-image" class="js-form-image"></input>
+                <label for="form-link">RHS Link</label>
+                <input type="text" name="link" placeholder="" id="form-link" class="js-form-link"></input>
+                <input id="form-position" name="position" class="js-form-position hidden"></input>
+                <button type="submit">Submit Changes</button>
+            </form>
         </div>
         <table class="js-table hidden">
             <thead>

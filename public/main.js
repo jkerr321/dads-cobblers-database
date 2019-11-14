@@ -35,6 +35,7 @@ if (document.querySelector('.js-modal')) {
         const plantedDate = event.srcElement.attributes['data-planted-date'].value;
         const link = event.srcElement.attributes['data-link'].value;
         const colour = event.srcElement.attributes['data-colour'].value;
+        const position = event.srcElement.attributes['data-position'].value;
 
         // get modal divs that we want to insert data into
         const modalCommonName = document.querySelector('.js-modal-common-name');
@@ -43,12 +44,35 @@ if (document.querySelector('.js-modal')) {
         const modalImage = document.querySelector('.js-modal-image');
         const modalPlantedDate = document.querySelector('.js-modal-planted-date');
         const modalLink = document.querySelector('.js-modal-link');
-        const modalContent = document.querySelector('.js-modal-content');
+        const modalContentInfo = document.querySelector('.js-modal-content-info');
 
+        // get form divs that we want to insert data into
+        const modalContentForm = document.querySelector('.js-modal-content-form');
+        const formCommonName = document.querySelector('.js-form-common-name');
+        const formLatinName = document.querySelector('.js-form-latin-name');
+        const formPerennialAnnual = document.querySelector('.js-form-perennial-annual');
+        const formColour = document.querySelector('.js-form-colour');
+        const formImage = document.querySelector('.js-form-image');
+        const formPlantedDate = document.querySelector('.js-form-planted-date');
+        const formLink = document.querySelector('.js-form-link');
+        const formPosition = document.querySelector('.js-form-position');
+
+        // set form placeholder values
+        formCommonName.placeholder = commonName || '';
+        formLatinName.placeholder = latinName || '';
+        formPerennialAnnual.placeholder = perennialAnnual || '';
+        formColour.placeholder = colour || '';
+        formImage.placeholder = image || '';
+        formPlantedDate.placeholder = plantedDate || '';
+        formLink.placeholder = link || '';
+        formPosition.value = position || '';
+        
         // update modal with plant info
         modalCommonName.innerHTML = commonName || '';
         modalLatinName.innerHTML = latinName || '';
-        modalContent.setAttribute('style', `border: 20px solid ${colour}`)
+    
+        modalContentInfo.setAttribute('style', `border: 20px solid ${colour}`)
+        modalContentForm.setAttribute('style', `border: 20px solid ${colour}`)
 
         if (plantedDate) {
             modalPlantedDate.innerHTML = `Planted ${plantedDate}`;
@@ -77,16 +101,7 @@ if (document.querySelector('.js-modal')) {
         }
     };
 
-    const highlightGridPlant = (plant) => {
-        const alreadySelected = document.querySelector('.selected');
-        if (alreadySelected) {
-            alreadySelected.classList.remove('selected');
-        }
-        plant.classList.add('selected');
-    }
-
     plants.forEach(plant => plant.addEventListener("click", e => showPlantModal(e, plant)));
-    plants.forEach(plant => plant.addEventListener("click", () => highlightGridPlant(plant)));
     toggleButton.addEventListener('click', toggleView);
 }
 

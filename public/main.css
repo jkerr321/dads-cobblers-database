@@ -166,13 +166,9 @@ button:hover {
 .grid-plant {
   border-radius: 100%;
 }
-
-.grid-plant:hover {
-  cursor: pointer;
-}
-
-.grid-plant.selected {
-	box-shadow: 0px 0px 10px;
+.grid-plant:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px;
 }
 
 .A {
