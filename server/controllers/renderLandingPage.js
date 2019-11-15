@@ -123,12 +123,17 @@ async function accessSpreadsheet(season) {
                     colour: row.colour,
                     image: row.image,
                     link: row.link,
+                    isFilled: row.filled,
                     notes: row.notes
                 });
             }
             return acc;
         }, []);
 
+        console.log('==================');
+        console.log('values', values);
+        console.log('==================');
+        
         return values;
     } catch (err) {
         console.log('==================');

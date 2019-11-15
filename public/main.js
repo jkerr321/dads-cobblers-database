@@ -2,8 +2,15 @@
 if (document.querySelector('.js-modal')) {
     const modal = document.querySelector('.js-modal');
     const table = document.querySelector('.js-table');
-    const plants = document.querySelectorAll('.js-grid-plant');
+    const garden = document.querySelector('.garden')
+    const plants = garden.querySelectorAll('[data-is-filled=TRUE]');
+    const emptyItems = garden.querySelectorAll('[data-is-filled=FALSE]');
     const toggleButton = document.querySelector('.js-button-toggle-view');
+
+    console.log('==================');
+    console.log('plants', plants);
+    console.log('==================');
+    
 
     //TODO surely this and showPlant Modal can be DRYed out
     const toggleView = () => {

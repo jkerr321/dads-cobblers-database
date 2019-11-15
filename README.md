@@ -5,24 +5,19 @@ Tidy up
 - readme
 - get off hobby Dyno
 - responsive gallery
-- modal work on hover?
 
 Form input
-- Add empty grid item as buttons and allow that to be added as a new row on SS
+- only show filled items in table
+- remove console logs
+- default to show form when click on empty pkant item
+- update SS to change filled = FALSE to TRUE on submit
+- when empty item
 - Add notes edit field
 - Add colour as drop down with colours
-- Add P/A as drop down
+- Add P/A as radio
+- Style form
+- Add a remove/delete option
 
-Style
-
-Update SS:
-
-// get SS data as happens already
-// loop through rows
-// if req.position = row position val
-// update changed vals like JS object
-// row.save
-// render page
 
 SpreadsheetRow
 Represents a single row from a sheet.
