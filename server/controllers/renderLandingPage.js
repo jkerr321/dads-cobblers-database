@@ -8,18 +8,12 @@ module.exports = async (req, res, seasonName) => {
     try {
         const seasonPath = req.path.substr(1); // e.g. 'summer19'
         if (req.method === "POST") {
-            console.log('==================');
-            console.log('req.body', req.body);
-            console.log('==================');
-            
             await updateSpreadsheet(req.body);
         }
         const gridItems = await accessSpreadsheet(seasonPath);
         return res.render('landing', { gridItems, seasonName, seasonPath });
     } catch (err) {
-        console.log('==================');
         console.log('render error', err);
-        console.log('==================');        
     };
 };
 
@@ -79,9 +73,7 @@ async function updateSpreadsheet(reqBody) {
         })
 
     } catch (err) {
-        console.log('==================');
         console.log('updateSpreadsheet error', err);
-        console.log('==================');    
     }
 
 }
@@ -130,14 +122,8 @@ async function accessSpreadsheet(season) {
             return acc;
         }, []);
 
-        console.log('==================');
-        console.log('values', values);
-        console.log('==================');
-        
         return values;
     } catch (err) {
-        console.log('==================');
         console.log('accessSpreadsheet error', err);
-        console.log('==================');
     }
 }

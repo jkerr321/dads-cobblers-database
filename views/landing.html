@@ -82,6 +82,7 @@
                 <div class="js-modal-planted-date"></div>
                 <div class="modal-image js-modal-image"></div>
                 <div class="modal-link js-modal-link"></div>
+                <div class="modal-notes js-modal-notes"></div>
             </div>
             <form class="modal-content js-modal-content-form" method="POST" action="/{{seasonPath}}">
                 <label for="form-latin-name">Latin Name</label>
@@ -98,6 +99,8 @@
                 <input type="text" name="image" placeholder="" id="form-image" class="js-form-image"></input>
                 <label for="form-link">RHS Link</label>
                 <input type="text" name="link" placeholder="" id="form-link" class="js-form-link"></input>
+                <label for="notes">RHS Link</label>
+                <textarea name="notes" rows="4" id="form-notes" class="js-form-notes"></textarea>
                 <input id="form-position" name="position" class="js-form-position hidden"></input>
                 <button type="submit">Submit Changes</button>
             </form>

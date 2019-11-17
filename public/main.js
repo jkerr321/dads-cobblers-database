@@ -7,11 +7,6 @@ if (document.querySelector('.js-modal')) {
     const emptyItems = garden.querySelectorAll('[data-is-filled=FALSE]');
     const toggleButton = document.querySelector('.js-button-toggle-view');
 
-    console.log('==================');
-    console.log('plants', plants);
-    console.log('==================');
-    
-
     //TODO surely this and showPlant Modal can be DRYed out
     const toggleView = () => {
         if (table.classList.contains('hidden')) {
@@ -42,6 +37,7 @@ if (document.querySelector('.js-modal')) {
         const plantedDate = event.srcElement.attributes['data-planted-date'].value;
         const link = event.srcElement.attributes['data-link'].value;
         const colour = event.srcElement.attributes['data-colour'].value;
+        const notes = event.srcElement.attributes['data-notes'].value;
         const position = event.srcElement.attributes['data-position'].value;
 
         // get modal divs that we want to insert data into
@@ -51,6 +47,7 @@ if (document.querySelector('.js-modal')) {
         const modalImage = document.querySelector('.js-modal-image');
         const modalPlantedDate = document.querySelector('.js-modal-planted-date');
         const modalLink = document.querySelector('.js-modal-link');
+        const modalNotes = document.querySelector('.js-modal-notes');
         const modalContentInfo = document.querySelector('.js-modal-content-info');
 
         // get form divs that we want to insert data into
@@ -62,6 +59,7 @@ if (document.querySelector('.js-modal')) {
         const formImage = document.querySelector('.js-form-image');
         const formPlantedDate = document.querySelector('.js-form-planted-date');
         const formLink = document.querySelector('.js-form-link');
+        const formNotes = document.querySelector('.js-form-notes');
         const formPosition = document.querySelector('.js-form-position');
 
         // set form placeholder values
@@ -72,11 +70,13 @@ if (document.querySelector('.js-modal')) {
         formImage.placeholder = image || '';
         formPlantedDate.placeholder = plantedDate || '';
         formLink.placeholder = link || '';
+        formNotes.placeholder = notes || '';
         formPosition.value = position || '';
         
         // update modal with plant info
         modalCommonName.innerHTML = commonName || '';
         modalLatinName.innerHTML = latinName || '';
+        modalNotes.innerHTML = notes || '';
     
         modalContentInfo.setAttribute('style', `border: 20px solid ${colour}`)
         modalContentForm.setAttribute('style', `border: 20px solid ${colour}`)

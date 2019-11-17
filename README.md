@@ -8,13 +8,10 @@ Tidy up
 
 Form input
 - only show filled items in table
-- remove console logs
-- default to show form when click on empty pkant item
+- default to show form when click on empty plant item
 - update SS to change filled = FALSE to TRUE on submit
-- when empty item
-- Add notes edit field
 - Add colour as drop down with colours
-- Add P/A as radio
+- Add P/A as radio button
 - Style form
 - Add a remove/delete option
 
