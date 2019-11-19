@@ -11,6 +11,7 @@ module.exports = async (req, res, seasonName) => {
             await updateSpreadsheet(req.body);
         }
         const gridItems = await accessSpreadsheet(seasonPath);
+        
         return res.render('landing', { gridItems, seasonName, seasonPath });
     } catch (err) {
         console.log('render error', err);
@@ -115,7 +116,7 @@ async function accessSpreadsheet(season) {
                     colour: row.colour,
                     image: row.image,
                     link: row.link,
-                    isFilled: row.filled,
+                    isFilled: !!row.filled,
                     notes: row.notes
                 });
             }

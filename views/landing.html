@@ -118,6 +118,7 @@
             </thead>
             <tbody>
                 {{#each gridItems}}
+                {{#if this.isFilled}}
                 <tr>
                     <td>{{this.position}}</td>
                     <td>
@@ -132,6 +133,7 @@
                     <td>{{this.plantedDate}}</td>
                     <td>{{this.notes}}</td>
                 </tr>
+                {{/if}}
                 {{/each}}
             </tbody>
         </table>
