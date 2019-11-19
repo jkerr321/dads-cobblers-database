@@ -1,11 +1,14 @@
 // Homepage functionality
 if (document.querySelector('.js-modal')) {
     const modal = document.querySelector('.js-modal');
+    const modalContentInfo = document.querySelector('.js-modal-content-info');
+    const modalContentForm = document.querySelector('.js-modal-content-form');
     const table = document.querySelector('.js-table');
     const garden = document.querySelector('.garden')
-    const plants = garden.querySelectorAll('[data-is-filled=TRUE]');
-    const emptyItems = garden.querySelectorAll('[data-is-filled=FALSE]');
+    const plants = garden.querySelectorAll('[data-is-filled=true]');
+    const emptyItems = garden.querySelectorAll('[data-is-filled=false]');
     const toggleButton = document.querySelector('.js-button-toggle-view');
+    const formColour = document.querySelector('.js-form-colour');
 
     //TODO surely this and showPlant Modal can be DRYed out
     const toggleView = () => {
@@ -48,14 +51,13 @@ if (document.querySelector('.js-modal')) {
         const modalPlantedDate = document.querySelector('.js-modal-planted-date');
         const modalLink = document.querySelector('.js-modal-link');
         const modalNotes = document.querySelector('.js-modal-notes');
-        const modalContentInfo = document.querySelector('.js-modal-content-info');
 
         // get form divs that we want to insert data into
-        const modalContentForm = document.querySelector('.js-modal-content-form');
         const formCommonName = document.querySelector('.js-form-common-name');
         const formLatinName = document.querySelector('.js-form-latin-name');
         const formPerennialAnnual = document.querySelector('.js-form-perennial-annual');
         const formColour = document.querySelector('.js-form-colour');
+        const formColourOptions = formColour.querySelectorAll('option');
         const formImage = document.querySelector('.js-form-image');
         const formPlantedDate = document.querySelector('.js-form-planted-date');
         const formLink = document.querySelector('.js-form-link');
@@ -66,20 +68,23 @@ if (document.querySelector('.js-modal')) {
         formCommonName.placeholder = commonName || '';
         formLatinName.placeholder = latinName || '';
         formPerennialAnnual.placeholder = perennialAnnual || '';
-        formColour.placeholder = colour || '';
         formImage.placeholder = image || '';
         formPlantedDate.placeholder = plantedDate || '';
         formLink.placeholder = link || '';
         formNotes.placeholder = notes || '';
         formPosition.value = position || '';
+        for (let i = 0; i < formColour.options.length; i++) {
+            if (formColour.options[i].value === colour) {
+                formColour.options[i].setAttribute('selected', '');
+            }
+        }
         
         // update modal with plant info
         modalCommonName.innerHTML = commonName || '';
         modalLatinName.innerHTML = latinName || '';
         modalNotes.innerHTML = notes || '';
-    
-        modalContentInfo.setAttribute('style', `border: 20px solid ${colour}`)
-        modalContentForm.setAttribute('style', `border: 20px solid ${colour}`)
+
+        changeBorderColour(colour);
 
         if (plantedDate) {
             modalPlantedDate.innerHTML = `Planted ${plantedDate}`;
@@ -108,8 +113,23 @@ if (document.querySelector('.js-modal')) {
         }
     };
 
+    const changeBorderColour = newColour => {
+        modalContentInfo.setAttribute('style', `border: 20px solid ${newColour}`)
+        modalContentForm.setAttribute('style', `border: 20px solid ${newColour}`)
+    }
+
+    //make this more functional - at least pass in form colour - is it being used elsewhere? If not contain it here
+    const changeFormColour = () => {
+        for (let i = 0; i < formColour.options.length; i++) {
+            if (formColour.options[i].selected) {
+                changeBorderColour(formColour.options[i].value);
+            }
+        }
+    }
+
     plants.forEach(plant => plant.addEventListener("click", e => showPlantModal(e, plant)));
     toggleButton.addEventListener('click', toggleView);
+    formColour.addEventListener('change', changeFormColour);
 }
 
 // Photo modal functionality for gallery page
