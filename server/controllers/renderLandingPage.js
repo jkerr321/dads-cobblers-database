@@ -3,6 +3,7 @@ dotenv.config();
 const GoogleSpreadsheet = require('google-spreadsheet');
 const { promisify } = require('util');
 const config = require('../../config');
+const colours = require('../colours');
 
 module.exports = async (req, res, seasonName) => {
     try {
@@ -12,7 +13,7 @@ module.exports = async (req, res, seasonName) => {
         }
         const gridItems = await accessSpreadsheet(seasonPath);
         
-        return res.render('landing', { gridItems, seasonName, seasonPath });
+        return res.render('landing', { gridItems, seasonName, seasonPath, colours });
     } catch (err) {
         console.log('render error', err);
     };

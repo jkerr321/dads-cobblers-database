@@ -92,13 +92,12 @@
                 <label for="form-perennial-annual">Perennial / Annual</label>
                 <input type="text" placeholder="" name="perennialAnnual" id="form-perennial-annual" class="js-form-perennial-annual"></input>
                 <label for="form-colour">Colour</label>
+                <a href="/colours" target="_blank">colour options</a>
                 <select id="form-colour" class="js-form-colour">
-                    <option value="red">red</option>
-                    <option value="forestgreen">forestgreen</option>
-                    <option value="orange">orange</option>
-                    <option value="blue">blue</option>
+                    {{#each colours}}
+                    <option value="{{this}}">{{this}}</option>
+                    {{/each}}
                 </select>
-                <!-- <input type="text" name="colour" placeholder="" id="form-colour" class="js-form-colour"></input> -->
                 <label for="form-planted-date">Planted Date</label>
                 <input type="text" name="plantedDate" placeholder="" id="form-planted-date" class="js-form-planted-date"></input>
                 <label for="form-image">Image (URL)</label>

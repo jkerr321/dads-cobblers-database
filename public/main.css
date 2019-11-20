@@ -381,3 +381,7 @@ td {
 .hidden {
   display: none;
 }
+
+.colour-display {
+  text-align: center;
+}

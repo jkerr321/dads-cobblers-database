@@ -73,8 +73,13 @@ if (document.querySelector('.js-modal')) {
         formLink.placeholder = link || '';
         formNotes.placeholder = notes || '';
         formPosition.value = position || '';
+
+        // remove currently selected default colour value and update to current plant colour
         for (let i = 0; i < formColour.options.length; i++) {
-            if (formColour.options[i].value === colour) {
+            formColour.options[i].removeAttribute('selected');
+        }
+        for (let i = 0; i < formColour.options.length; i++) {
+            if (formColour.options[i].value.toLowerCase() === colour.toLowerCase()) {
                 formColour.options[i].setAttribute('selected', '');
             }
         }
