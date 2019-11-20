@@ -8,13 +8,9 @@ Tidy up
 
 Form input
 - default to show form when click on empty plant item
-- Add link to see colours
 - update SS to change filled = FALSE to TRUE on submit
-- Add colour as drop down with colours
-- Add P/A as radio button
 - Style form
 - Add a remove/delete option
-
 
 SpreadsheetRow
 Represents a single row from a sheet.

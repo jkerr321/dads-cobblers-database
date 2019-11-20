@@ -55,7 +55,8 @@ if (document.querySelector('.js-modal')) {
         // get form divs that we want to insert data into
         const formCommonName = document.querySelector('.js-form-common-name');
         const formLatinName = document.querySelector('.js-form-latin-name');
-        const formPerennialAnnual = document.querySelector('.js-form-perennial-annual');
+        const formAnnual = document.querySelector('.js-form-annual');
+        const formPerennial = document.querySelector('.js-form-perennial');
         const formColour = document.querySelector('.js-form-colour');
         const formColourOptions = formColour.querySelectorAll('option');
         const formImage = document.querySelector('.js-form-image');
@@ -67,12 +68,18 @@ if (document.querySelector('.js-modal')) {
         // set form placeholder values
         formCommonName.placeholder = commonName || '';
         formLatinName.placeholder = latinName || '';
-        formPerennialAnnual.placeholder = perennialAnnual || '';
         formImage.placeholder = image || '';
         formPlantedDate.placeholder = plantedDate || '';
         formLink.placeholder = link || '';
         formNotes.placeholder = notes || '';
         formPosition.value = position || '';
+
+        // remove current radio button selection
+        formPerennial.removeAttribute('checked');
+        formAnnual.removeAttribute('checked');
+
+        if (perennialAnnual === 'P') formPerennial.setAttribute('checked', '');
+        if (perennialAnnual === 'A') formAnnual.setAttribute('checked', '');
 
         // remove currently selected default colour value and update to current plant colour
         for (let i = 0; i < formColour.options.length; i++) {
