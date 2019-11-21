@@ -44,32 +44,13 @@ async function updateSpreadsheet(reqBody) {
             "limit": 300
         });
 
+        //TODO loop through reqBody object keys instead
         rows.forEach(row => {
             if (row.position === reqBody.position) {
-                if (reqBody.colour) {
-                    row.colour = reqBody.colour;
-                }
-                if (reqBody.commonName) {
-                    row.commonname = reqBody.commonName;
-                }
-                if (reqBody.latinName) {
-                    row.latinname = reqBody.latinName;
-                }
-                if (reqBody.perennialAnnual) {
-                    row.perennialannual = reqBody.perennialAnnual;
-                }
-                if (reqBody.plantedDate) {
-                    row.planteddate = reqBody.plantedDate;
-                }
-                if (reqBody.image) {
-                    row.image = reqBody.image;
-                }
-                if (reqBody.link) {
-                    row.link = reqBody.link;
-                }
-                if (reqBody.notes) {
-                    row.notes = reqBody.notes;
-                }
+                Object.keys(reqBody).forEach(key => {
+                    // e.g. if (reqBody.colour) {row.colour = reqBody.colour};
+                    if (reqBody[key]) {row[key] = reqBody[key]}
+                });
                 row.save();
             }
         })

@@ -90,13 +90,15 @@
                 <input type="text" name="latinName" placeholder="" id="form-latin-name" class="js-form-latin-name"></input>
                 <label for="form-common-name">Common Name</label>
                 <input type="text" name="commonName" placeholder="" id="form-common-name" class="js-form-common-name"></input>
+
                 <label for="perennial">Perennial</label>
-                <input type="radio" id="annual" name="perennialAnnual" value="annual" class="js-form-perennial">
+                <input type="radio" id="perennial" name="perennialAnnual" value="Perennial" class="js-form-perennial">
                 <label for="annual">Annual</label>
-                <input type="radio" name="perennialAnnual" id="perennial" class="js-form-annual"></input>
-                <label for="form-colour">Colour</label>
+                <input type="radio" id="annual" name="perennialAnnual" value="Annual" class="js-form-annual"></input>
+
                 <a href="/colours" target="_blank">colour options</a>
-                <select id="form-colour" class="js-form-colour">
+                <label for="colour">Colour</label>
+                <select id="colour" name="colour" class="js-form-colour">
                     {{#each colours}}
                     <option value="{{this}}">{{this}}</option>
                     {{/each}}
@@ -110,6 +112,7 @@
                 <label for="notes">Notes</label>
                 <textarea name="notes" rows="4" id="form-notes" class="js-form-notes"></textarea>
                 <input id="form-position" name="position" class="js-form-position hidden"></input>
+                <input id="form-filled" name="filled" value="true" class="hidden"></input>
                 <button type="submit">Submit</button>
             </form>
         </div>

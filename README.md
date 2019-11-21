@@ -7,9 +7,9 @@ Tidy up
 - responsive gallery
 
 Form input
-- update SS to change filled = FALSE to TRUE on submit
 - Style form
 - Add a remove/delete option
+- move back to dynamic sheet name (rather than hard code summer19A)
 
 SpreadsheetRow
 Represents a single row from a sheet.
