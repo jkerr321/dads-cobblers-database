@@ -7,7 +7,6 @@ Tidy up
 - responsive gallery
 
 Form input
-- default to show form when click on empty plant item
 - update SS to change filled = FALSE to TRUE on submit
 - Style form
 - Add a remove/delete option

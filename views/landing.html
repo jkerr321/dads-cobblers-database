@@ -75,8 +75,8 @@
     <div class="info">
         <div class="modal js-modal border">
             <div class="modal-content js-modal-content-info">
-                <button class="modal-edit-data">Edit</button>
-                <div class="modal-latin-name js-modal-latin-name"></div>
+                <button class="js-modal-edit-button modal-edit-data">Edit</button>
+                <div class="modal-title js-modal-latin-name"></div>
                 <div class="modal-common-name js-modal-common-name">Click on a spot to find out more :)</div>
                 <div class="modal-perennial-annual js-modal-perennial-annual"></div>
                 <div class="js-modal-planted-date"></div>
@@ -84,7 +84,8 @@
                 <div class="modal-link js-modal-link"></div>
                 <div class="modal-notes js-modal-notes"></div>
             </div>
-            <form class="modal-content js-modal-content-form" method="POST" action="/{{seasonPath}}">
+            <form class="modal-content js-modal-content-form hidden" method="POST" action="/{{seasonPath}}">
+                <div class="modal-title js-form-title"></div>
                 <label for="form-latin-name">Latin Name</label>
                 <input type="text" name="latinName" placeholder="" id="form-latin-name" class="js-form-latin-name"></input>
                 <label for="form-common-name">Common Name</label>
@@ -109,7 +110,7 @@
                 <label for="notes">Notes</label>
                 <textarea name="notes" rows="4" id="form-notes" class="js-form-notes"></textarea>
                 <input id="form-position" name="position" class="js-form-position hidden"></input>
-                <button type="submit">Submit Changes</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
         <table class="js-table hidden">
