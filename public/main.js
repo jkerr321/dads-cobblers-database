@@ -10,8 +10,16 @@ if (document.querySelector('.js-modal')) {
     const formColour = document.querySelector('.js-form-colour');
     const editButton = document.querySelector('.js-modal-edit-button');
 
+    const hideInitialModal = () => {
+        const modalContentInitial = document.querySelector('.js-modal-initial');
+        if (!modalContentInitial.classList.contains('hidden')) {
+            modalContentInitial.classList.add('hidden')
+        }
+    }
+
     //TODO surely this and showPlant Modal can be DRYed out
     const toggleView = () => {
+        hideInitialModal();
         if (table.classList.contains('hidden')) {
             table.classList.remove('hidden');
             modal.classList.add('hidden');
@@ -38,6 +46,7 @@ if (document.querySelector('.js-modal')) {
 
     // NB Alas this isn't merged with functionality in toggleView because the modal is shown on load
     const showPlantModal = (event) => {
+        hideInitialModal();
         const plantInfo = getPlantData(event);
         populatePlantData(plantInfo);
         populateForm(plantInfo);
@@ -46,7 +55,6 @@ if (document.querySelector('.js-modal')) {
         if (!table.classList.contains('hidden')) {
             table.classList.add('hidden');
         }
-
         modal.classList.remove('hidden');
     }
 
@@ -177,18 +185,18 @@ if (document.querySelector('.js-modal')) {
 
 // Photo modal functionality for gallery page
 if (document.querySelector('.js-photo-modal')) {
-    const modal = document.querySelector('.js-photo-modal');
+    const photoModal = document.querySelector('.js-photo-modal');
     const modalContent = document.querySelector('.js-photo-modal-content');
     const photos = Array.from(document.querySelector('.js-gallery-container').querySelectorAll('.photo'));
-    const close = modal.querySelector('.js-close');
+    const close = photoModal.querySelector('.js-close');
 
     photos.forEach(photo => photo.addEventListener('click', (e) => {
-        modal.classList.remove('hidden');
+        photoModal.classList.remove('hidden');
         modalContent.src = e.srcElement.src;
     }));
 
     // close modal when anywhere on screen is clicked apart from the image itself
-    close.addEventListener('click', () => modal.classList.add('hidden'));
-    modal.addEventListener('click', () => modal.classList.add('hidden'));
+    close.addEventListener('click', () => photoModal.classList.add('hidden'));
+    photoModal.addEventListener('click', () => photoModal.classList.add('hidden'));
     modalContent.addEventListener('click', (e) => e.stopPropagation());
 }
