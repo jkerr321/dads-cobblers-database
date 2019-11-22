@@ -116,7 +116,7 @@ if (document.querySelector('.js-modal')) {
         const formPlantedDate = document.querySelector('.js-form-planted-date');
         const formLink = document.querySelector('.js-form-link');
         const formNotes = document.querySelector('.js-form-notes');
-        const formPosition = document.querySelector('.js-form-position');
+        const formPosition = document.querySelectorAll('.js-form-position');
         
         changeBorderColour(plantInfo.colour);
 
@@ -128,7 +128,7 @@ if (document.querySelector('.js-modal')) {
         formPlantedDate.placeholder = plantInfo.plantedDate || '';
         formLink.placeholder = plantInfo.link || '';
         formNotes.placeholder = plantInfo.notes || '';
-        formPosition.value = plantInfo.position || '';
+        formPosition.forEach(field => field.value = plantInfo.position || '');
 
         // remove current radio button selection
         formPerennial.removeAttribute('checked');

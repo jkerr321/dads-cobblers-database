@@ -48,8 +48,14 @@ async function updateSpreadsheet(reqBody) {
         rows.forEach(row => {
             if (row.position === reqBody.position) {
                 Object.keys(reqBody).forEach(key => {
-                    // e.g. if (reqBody.colour) {row.colour = reqBody.colour};
-                    if (reqBody[key]) {row[key] = reqBody[key]}
+                    if (reqBody.removePlant) {
+                        // remove all values, then put position value back so it still renders as an empty spot on the grid next time round
+                        row[key] = '';
+                        row.position = reqBody.position;
+                    } else if (reqBody[key]) {
+                        // e.g. if (reqBody.colour) {row.colour = reqBody.colour};
+                        row[key] = reqBody[key]
+                    }    
                 });
                 row.save();
             }
