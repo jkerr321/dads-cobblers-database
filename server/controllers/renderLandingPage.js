@@ -73,14 +73,8 @@ async function accessSpreadsheet(season) {
         await promisify(doc.useServiceAccountAuth)(config);
         const info = await promisify(doc.getInfo)();
 
-        // const sheet = info.worksheets.reduce((acc, worksheet, i) => {
-        //     if (worksheet.title.toLowerCase() === season.toLowerCase()) {
-        //         acc = worksheet;
-        //     }
-        //     return acc;
-        // }, {});
         const sheet = info.worksheets.reduce((acc, worksheet, i) => {
-            if (worksheet.title === 'SUMMER19A') {
+            if (worksheet.title.toLowerCase() === season.toLowerCase()) {
                 acc = worksheet;
             }
             return acc;

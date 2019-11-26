@@ -1,15 +1,13 @@
 TODO
 
 Tidy up
-- add older gallery
+- DRY out code - server side
 - readme
+- From - Actually fill notes section with notes
+- Password for edit mode?
+- add older gallery
 - get off hobby Dyno
 - responsive gallery
-
-Form input
-- Move back to dynamic sheet name (rather than hard code summer19A)
-- Password for edit mode?
-- Actually fill notes section with notes
 
 SpreadsheetRow
 Represents a single row from a sheet.
