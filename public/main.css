@@ -58,16 +58,25 @@ button:hover {
   margin: 8px 0 0 12px;
 }
 
-.header button {
+.button {
+  color: #131313;
+  font-size: 24px;
+  font-family: 'Bangers';
+}
+
+.button--big {
   height: 45px;
   width: 168px;
-  color: #131313;
-  font-family: 'Bangers';
-  font-size: 24px;
   margin: 20px auto 52px;
 }
 
-.header button:hover {
+.button--small {
+  /* font-family: 'PT Mono', monospace; */
+  height: 32px;
+  margin: 4px auto;
+}
+
+.button:hover {
   color: white;
   background-color: #131313;
 }
@@ -260,6 +269,25 @@ td {
 
 .modal-link {
   margin: 20px auto 24px;
+}
+
+.form-body__label {
+  vertical-align: top;
+  text-align: right;
+  margin-right: 8px;
+}
+
+.form-body__input {
+  text-align: left;
+  margin-left: 8px;
+}
+
+.form-body {
+  margin: 14px 12px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-row-gap: 14px;
+  text-align: left;
 }
 
 /* Little bit of responsiveness */

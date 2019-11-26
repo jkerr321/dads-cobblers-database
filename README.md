@@ -7,9 +7,9 @@ Tidy up
 - responsive gallery
 
 Form input
-- Style form
-- Add a remove/delete option
-- move back to dynamic sheet name (rather than hard code summer19A)
+- Move back to dynamic sheet name (rather than hard code summer19A)
+- Password for edit mode?
+- Actually fill notes section with notes
 
 SpreadsheetRow
 Represents a single row from a sheet.
