@@ -1,7 +1,6 @@
 TODO
 
 Tidy up
-- DRY out code - server side
 - readme
 - From - Actually fill notes section with notes
 - Password for edit mode?
