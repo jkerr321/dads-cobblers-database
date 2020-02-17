@@ -1,4 +1,14 @@
 module.exports = {
+    "options": {
+        "colour_one": '#862633',
+        "colour_two": 'ghostwhite',
+        "heading": `David's Cobblers Database`,
+        "sub_heading": `NTFC Programme Collection`,
+        "img_one_src": 'prog1a.png',
+        "img_two_src": 'prog2.png',
+    },
+    "password": process.env.password,
+    "sheet_id": process.env.sheet_id,
     "type": process.env.type,
     "project_id": process.env.project_id,
     "private_key_id": process.env.private_key_id,

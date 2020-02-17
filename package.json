@@ -2,18 +2,11 @@
   "name": "davids-cobblers-database",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "author": "Jennifer Johnson",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
-    "google-spreadsheet": "^2.0.8",
-    "nodemon": "^1.19.3",
-    "path": "^0.12.7"
-  },
-  "devDependencies": {
-    "eslint": "^6.7.2"
+    "collectors-db": "^2.5.2",
+    "nodemon": "^2.0.2"
   }
 }
