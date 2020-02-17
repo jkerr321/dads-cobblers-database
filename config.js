@@ -1,7 +1,8 @@
 module.exports = {
     "options": {
         "colour_one": '#862633',
-        "colour_two": 'ghostwhite',
+        "colour_two": '#fbe1e6',
+        "colour_three": "ghostwhite",
         "heading": `David's Cobblers Database`,
         "sub_heading": `NTFC Programme Collection`,
         "img_one_src": 'prog1a.png',
