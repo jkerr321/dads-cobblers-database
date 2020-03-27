@@ -6,7 +6,7 @@
   "author": "Jennifer Johnson",
   "license": "ISC",
   "dependencies": {
-    "collectors-db": "^2.7.0",
+    "collectors-db": "^4.1.0",
     "nodemon": "^2.0.2"
   }
 }
