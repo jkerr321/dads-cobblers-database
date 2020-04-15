@@ -1,12 +1,13 @@
 module.exports = {
-    "options": {
-        "colour_one": '#862633',
-        "colour_two": '#fbe1e6',
-        "colour_three": "ghostwhite",
-        "heading": `David's Cobblers Database`,
-        "sub_heading": `NTFC Programme Collection`,
-        "img_one_src": 'prog1a.png',
-        "img_two_src": 'prog2.png',
+    options: {
+        team: "Northampton",
+        colour_one: '#862633',
+        colour_two: '#fbe1e6',
+        colour_three: "ghostwhite",
+        heading: `David's Cobblers Database`,
+        sub_heading: `NTFC Programme Collection`,
+        img_one_src: 'prog1a.png',
+        img_two_src: 'prog2.png',
         data_points: {
             season: 'Season',
             date: 'Date',
