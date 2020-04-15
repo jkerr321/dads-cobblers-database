@@ -1,6 +1,6 @@
 module.exports = {
     options: {
-        team: "Northampton",
+        team: 'Northampton',
         colour_one: '#862633',
         colour_two: '#fbe1e6',
         colour_three: "ghostwhite",
